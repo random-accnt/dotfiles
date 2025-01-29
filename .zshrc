@@ -5,6 +5,7 @@ export WIN_HOME="/mnt/c/Users/jiric/"
 export SCHOOL_DIR="$WIN_HOME/Documents/School/LS_2024_25/"
 export GIT="/home/jirka/git/"
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
 
 # Default programs
 export EDITOR='nvim'
@@ -125,4 +126,3 @@ eval "$(zoxide init zsh)"
 if [[ -z "$TMUX" ]] && [[ $TERM != "linux" ]]; then
   tmux attach-session -t default || tmux new-session -s default
 fi
-
