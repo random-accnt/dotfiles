@@ -5,12 +5,12 @@ Backup of some dotfiles.
 ### Update existing
 Make sync script executable:
 ```
-> chmod +x ./sync.sh
+chmod +x ./sync.sh
 ```
 
 Sync by running:
 ```
-> ./sync.sh
+./sync.sh
 ```
 
 Commit and push changes
