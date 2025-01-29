@@ -1,0 +1,1 @@
+/home/jirka/.bash_profile
