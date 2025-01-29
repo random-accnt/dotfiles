@@ -23,7 +23,7 @@ rsync -av --delete ~/.config/nvim/ ~/dotfiles/nvim/
 Run *sync.sh*
 
 ## TODO
-[ ] add setup script
+- [ ] add setup script
     - copy dotfiles to correct dirs
     - handle conflicts with existing files
     - also install packages if missing??
