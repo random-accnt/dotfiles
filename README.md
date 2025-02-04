@@ -27,3 +27,7 @@ Run *sync.sh*
     - copy dotfiles to correct dirs
     - handle conflicts with existing files
     - also install packages if missing??
+
+- [ ] automation
+    - automatically sync specified files / dirs when modified
+    - symlink does not work, because it get's pushed to repo instead of the actual files
