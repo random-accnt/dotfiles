@@ -31,3 +31,9 @@ Run *sync.sh*
 - [ ] automation
     - automatically sync specified files / dirs when modified
     - symlink does not work, because it get's pushed to repo instead of the actual files
+
+### Nice to have
+- [ ] automated git push
+- [ ] script for adding / removing files to sync
+- [ ] OS independent config (for relevant pkgs like nvim)
+    - can run from WSL to make it easier
