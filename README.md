@@ -22,6 +22,13 @@ rsync -av --delete ~/.config/nvim/ ~/dotfiles/nvim/
 
 Run *sync.sh*
 
+#### Exclude files from sync
+This can be achieved using the --exclude option for rsync. For example like this:
+
+rsync -av --delete --exclude "lazy-lock.json" ~/.config/nvim/ ~/dotfiles/nvim/
+
+More files can be added using another --exclude. You can also use wildcards (*.log, *.swp) or patterns (.DS_Store, node_modules/) in --exclude.
+
 ## TODO
 - [ ] add setup script
     - copy dotfiles to correct dirs
