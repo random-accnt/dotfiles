@@ -74,6 +74,7 @@ return {
 
 			local servers = {
 				-- gopls = { go_cfg },
+				clangd = {},
 				gopls = {},
 				pyright = {
 					settings = {

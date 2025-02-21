@@ -178,3 +178,27 @@ vim.keymap.set("n", "<leader>re", api.edit, { desc = "[R]emote [E]edit " })
 -- [[ Oil ]]
 vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "[O]il in parent directory" })
 vim.keymap.set("n", "<leader>O", "<CMD>Oil --float<CR>", { desc = "[O]il in parent directory - floating" })
+
+-- [[ Molten - jupyter ]]
+vim.keymap.set("n", "<leader>ji", ":MoltenInit<CR>", { silent = true, desc = "[J]upyter [I]nitialize" })
+vim.keymap.set(
+	"n",
+	"<leader>je",
+	":MoltenEvaluateOperator<CR>",
+	{ silent = true, desc = "[J]upyter [e]valuate operator section" }
+)
+vim.keymap.set("n", "<leader>jl", ":MoltenEvaluateLine<CR>", { silent = true, desc = "[J]upyter evaluate [l]line" })
+vim.keymap.set("n", "<leader>jc", ":MoltenReevaluateCell<CR>", { silent = true, desc = "[J]upyter evaluate [c]ell" })
+vim.keymap.set(
+	"v",
+	"<leader>je",
+	":<C-u>MoltenEvaluateVisual<CR>gv",
+	{ silent = true, desc = "[J]upyter [e]valuate visual section" }
+)
+vim.keymap.set("n", "<leader>jh", ":MoltenHideOutput<CR>", { silent = true, desc = "[J]upyter [h]ide output" })
+vim.keymap.set(
+	"n",
+	"<leader>jo",
+	":noautocmd MoltenEnterOutput<CR>",
+	{ silent = true, desc = "[J]upyter [o]utput show/enter" }
+)

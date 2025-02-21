@@ -115,6 +115,7 @@ source /usr/share/nvm/init-nvm.sh
 
 # Python
 export PIPENV_VENV_IN_PROJECT=false
+export NVIM_PYTHON_LOG_FILE=/home/jirka/.log/nvim_py_log
 
 # make
 export MAKEFLAGS="-j$(expr $(nproc) \+ 1)"
