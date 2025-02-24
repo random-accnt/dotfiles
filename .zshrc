@@ -1,20 +1,14 @@
-# Some usefull paths
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-export WIN_HOME="/mnt/c/Users/jiric/"
-export SCHOOL_DIR="$WIN_HOME/Documents/School/LS_2024_25/"
-export GIT="/home/jirka/git/"
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
-
-# Default programs
-export EDITOR='nvim'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="example" # set by `omz`
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -28,7 +22,6 @@ ZSH_THEME="example" # set by `omz`
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -48,7 +41,7 @@ ZSH_THEME="example" # set by `omz`
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="false"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -72,6 +65,10 @@ ENABLE_CORRECTION="false"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Completion?
+autoload -U compinit
+compinit
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -82,11 +79,9 @@ plugins=(
 	zsh-autosuggestions
 )
 
-source $ZSH/oh-my-zsh.sh
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
-# Lang
-unset LANG
-source /etc/profile.d/locale.sh
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -95,6 +90,12 @@ source /etc/profile.d/locale.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -104,14 +105,12 @@ source /etc/profile.d/locale.sh
 # users are encouraged to define aliases within a top-level file in
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
 # - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# nvm
-source /usr/share/nvm/init-nvm.sh
 
 # Python
 export PIPENV_VENV_IN_PROJECT=false
@@ -120,6 +119,7 @@ export NVIM_PYTHON_LOG_FILE=/home/jirka/.log/nvim_py_log
 # make
 export MAKEFLAGS="-j$(expr $(nproc) \+ 1)"
 
+# init zoxide
 eval "$(zoxide init zsh)"
 
 # TMUX
