@@ -4,11 +4,14 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# extend path
+export PATH=/home/jirka/bin:$PATH
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="custom" 
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,6 +79,7 @@ compinit
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+	zsh-autosuggestions
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -107,9 +111,12 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
+# Aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias d="pwd"
+alias zshsrc="source ~/.zshrc"
+alias battery="< /sys/class/power_supply/BAT1/capacity"
 
 # Python
 export PIPENV_VENV_IN_PROJECT=false
@@ -120,6 +127,7 @@ export MAKEFLAGS="-j$(expr $(nproc) \+ 1)"
 
 # init zoxide
 eval "$(zoxide init zsh)"
+
 
 # TMUX
 # Autostart tmux if not already inside a tmux session
