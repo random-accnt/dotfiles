@@ -16,11 +16,16 @@ Sync by running:
 Commit and push changes
 
 ### Add new dotfile
-Add new line to *sync.sh*, for example:
+1) Add new line to *sync.sh*, for example:
 
 rsync -av --delete ~/.config/nvim/ ~/dotfiles/nvim/
 
-Run *sync.sh*
+2) Add new line to *update.sh* (same line as sync, but order of paths is reversed), for example:
+
+rsync -av --delete ~/dotfiles/nvim/ ~/.config/nvim/ 
+
+3) Run *sync.sh*
+4) commit + push to repo
 
 #### Exclude files from sync
 This can be achieved using the --exclude option for rsync. For example like this:
